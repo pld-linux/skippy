@@ -1,5 +1,5 @@
 Summary:	Full-screen task-switcher for X11
-Summary(pl):	Pe³noekranowy prze³±cznik zadañ
+Summary(pl):	Pe³noekranowy prze³±cznik zadañ dla X11
 Name:		skippy
 Version:	0.4.0
 Release:	1
@@ -7,10 +7,10 @@ License:	GPL
 Group:		X11/Window Managers
 Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	057323a11d08814f365b79237ec00856
-Patch0:		%{name}-Makefile.patch
+Patch0:		%{name}-readconfig.patch
 URL:		http://thegraveyard.org/skippy.php
-BuildRequires:	xft-devel
 BuildRequires:	imlib2-devel
+BuildRequires:	xft-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,7 +47,8 @@ osobny zarz±dca okien a Expose jest tylko dla Maców.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	PREFIX=%{_prefix}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
