@@ -1,12 +1,13 @@
 Summary:	Full-screen task-switcher for X11
 Summary(pl):	Pe³noekranowy prze³±cznik zadañ dla X11
 Name:		skippy
-Version:	0.5.0
-Release:	1
-License:	GPL
+Version:	0.5.1
+%define	_rc     rc1
+Release:        0.%{_rc}.1
+License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	c7b5c7f0dd870513494916afd8581323
+Source0:	http://thegraveyard.org/files/%{name}-%{version}%{_rc}.tar.bz2
+# Source0-md5:	085d6a73dbc7621b825295c053780d4d
 Patch0:		%{name}-home_etc.patch
 URL:		http://thegraveyard.org/skippy.php
 BuildRequires:	home-etc-devel
@@ -39,7 +40,7 @@ myszy. Tak samo robi to expocity i Expose Apple'a, ale expocity to
 osobny zarz±dca okien a Expose jest tylko dla Maców.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}%{_rc}
 %patch0 -p1
 
 %build
