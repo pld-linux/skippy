@@ -1,0 +1,35 @@
+diff -ruN skippy-0.4.1-orig/Makefile skippy-0.4.1/Makefile
+--- skippy-0.4.1-orig/Makefile	2004-05-15 22:39:19.000000000 +0200
++++ skippy-0.4.1/Makefile	2004-05-18 00:53:27.109348000 +0200
+@@ -4,7 +4,7 @@
+ X11PREFIX = /usr/X11R6
+ 
+ CFLAGS += -I${X11PREFIX}/include `imlib2-config --cflags` `pkg-config xft --cflags` -g -pedantic -Wall
+-LDFLAGS += -L${X11PREFIX}/lib -lX11 -lm `imlib2-config --libs` `pkg-config xft --libs`
++LDFLAGS += -L${X11PREFIX}/lib -lX11 -lm -lhome_etc `imlib2-config --libs` `pkg-config xft --libs`
+ 
+ EXESUFFIX =
+ 
+Pliki skippy-0.4.1-orig/skippy i skippy-0.4.1/skippy ró¿ni± siê
+diff -ruN skippy-0.4.1-orig/skippy.c skippy-0.4.1/skippy.c
+--- skippy-0.4.1-orig/skippy.c	2004-05-15 22:39:19.000000000 +0200
++++ skippy-0.4.1/skippy.c	2004-05-18 00:58:24.821088936 +0200
+@@ -18,6 +18,7 @@
+  */
+ 
+ #include "skippy.h"
++#include <home_etc.h>
+ 
+ static int DIE_NOW = 0;
+ 
+@@ -180,7 +181,10 @@
+ 		return -1;
+ 	}
+ 	
++#if 0	
+ 	homedir = getenv("HOME");
++#endif
++	homedir = _HEdir;
+ 	if(homedir) {
+ 		snprintf(cfgpath, 8191, "%s/%s", homedir, ".skippyrc");
+ 		config = config_load(cfgpath);

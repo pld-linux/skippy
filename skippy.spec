@@ -7,7 +7,9 @@ License:	GPL
 Group:		X11/Window Managers
 Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	4d0d2b05f8f1357ceb80754f52a90991
+Patch0:		%{name}-home_etc.patch
 URL:		http://thegraveyard.org/skippy.php
+BuildRequires:	home-etc-devel
 BuildRequires:	imlib2-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xft-devel
@@ -38,6 +40,7 @@ osobny zarz±dca okien a Expose jest tylko dla Maców.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make}
