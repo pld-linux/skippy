@@ -1,0 +1,12 @@
+--- skippy-0.4.0/skippy.c.orig	2004-05-14 22:45:01.000000000 +0200
++++ skippy-0.4.0/skippy.c	2004-05-15 14:40:58.458126896 +0200
+@@ -185,6 +185,9 @@
+ 	if(homedir) {
+ 		snprintf(cfgpath, 8191, "%s/%s", homedir, ".skippyrc");
+ 		config = config_load(cfgpath);
++		if(! config) {
++			return -1;
++		}
+ 	}
+ 	
+ 	mw = mainwin_create(dpy, config);
