@@ -2,8 +2,8 @@ Summary:	Full-screen task-switcher for X11
 Summary(pl):	Pe³noekranowy prze³±cznik zadañ dla X11
 Name:		skippy
 Version:	0.5.1
-%define	_rc     rc1
-Release:        0.%{_rc}.1
+%define	_rc	rc1
+Release:	0.%{_rc}.1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://thegraveyard.org/files/%{name}-%{version}%{_rc}.tar.bz2
