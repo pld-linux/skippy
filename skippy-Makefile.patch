@@ -1,0 +1,13 @@
+diff -uNr skippy-0.4.0-orig/Makefile skippy-0.4.0/Makefile
+--- skippy-0.4.0-orig/Makefile	2004-05-14 22:45:01.000000000 +0200
++++ skippy-0.4.0/Makefile	2004-05-15 15:28:06.969084016 +0200
+@@ -1,7 +1,7 @@
+-PREFIX = /usr/local
++PREFIX = /usr
+ BINDIR = ${PREFIX}/bin
+ 
+-X11PREFIX = /usr/X11R6
++X11PREFIX = /usr
+ 
+ CFLAGS += -I${X11PREFIX}/include `imlib2-config --cflags` `pkg-config xft --cflags` -g -pedantic -Wall
+ LDFLAGS += -L${X11PREFIX}/lib -lX11 -lm `imlib2-config --libs` `pkg-config xft --libs`
