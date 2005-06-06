@@ -12,6 +12,7 @@ Patch0:		%{name}-home_etc.patch
 URL:		http://thegraveyard.org/skippy.php
 BuildRequires:	home-etc-devel
 BuildRequires:	imlib2-devel
+BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xft-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
