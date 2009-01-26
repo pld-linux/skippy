@@ -14,7 +14,7 @@ BuildRequires:	home-etc-devel
 BuildRequires:	imlib2-devel
 BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig
-BuildRequires:	xft-devel
+BuildRequires:	xorg-lib-libXft-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
